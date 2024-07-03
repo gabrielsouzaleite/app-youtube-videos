@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/videos/styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/videos/main.js" defer></script>
+  <title>MF_VIDEOS</title>
+</head>
+<body>
+  <div class="container">
+    <h2>MF_VIDEOS</h2>
+    <section id="search">
+      <form action="">
+        <input type="search" name="search-video" id="search-video" placeholder="Pesquisar">
+        <label class="sr-only" for="search-video">Pesquisar</label>
+        <button type="button" id="submit-button">Buscar</button>
+      </form>
+    </section>
+    <section id="videos">
+    </section>
+    <h2 class="title">Favoritos</h2>
+    <button type="button" id="load-favorites-button">Carregar Favoritos</button>
+    <section id="favorites">
+      <div id="favorite-videos"></div>
+    </section>
+  </div> 
+</body>
+</html>

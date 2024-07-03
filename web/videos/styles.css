@@ -1,0 +1,75 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+button {
+  border: none;
+  padding: .5rem;
+
+  border-radius: 6px;
+  background-color: var(--button-color);
+  color: var(--white);
+}
+
+#search {
+  margin-top: 1rem;
+}
+
+#search-video {
+  padding: .5rem;
+  border: 1px solid var(--font-color);
+  border-radius: 6px;
+}
+
+#videos, #favorite-videos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 3rem;
+
+  width: 100%;
+  
+
+  margin-top: 2rem;
+}
+
+.video {
+  width: 20rem;
+
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 4px;
+}
+
+.title{
+  margin-top: 2rem;
+}
+
+#load-favorites-button {
+  margin-top: 1rem;
+}
+
+.favorite-button {
+  color: var(--font-color);
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  text-align: right;
+}
+
+.favorite-button.favorited {
+  color: gold;
+}

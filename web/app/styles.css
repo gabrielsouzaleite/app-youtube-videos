@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url(root.css);
+
+body, input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+}
+
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+main {
+  width: 90vw;
+
+  padding: 4rem;
+  gap: 3rem;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: 
+  "mf-drawer mf-videos"
+  "mf-drawer mf-videos";
+}
+
+#microfrontend-drawer {
+  grid-area: mf-drawer;
+  padding: 2rem;
+}
+
+#microfrontend-videos {
+  width: 80vw;
+
+  grid-area: mf-videos;
+  padding: 2rem;
+
+  border-radius: 6px;
+  box-shadow: 10px 10px 55px 12px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  main{
+    grid-template-areas: 
+    "mf-drawer"
+    "mf-videos";    
+  }
+}

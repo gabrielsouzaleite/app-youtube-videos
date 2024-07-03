@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --font-color: #373A40;
+  --button-color: #0F67B1;
+
+  --white: #fff;
+}

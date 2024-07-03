@@ -1,0 +1,35 @@
+version: '3'
+services:
+  bff-videos:
+    build:
+      context: ./bff/videos
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+  
+  bff-favorites:
+    build:
+      context: ./bff/favorites
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8002"
+  
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+  
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - bff-videos
+      - bff-favorites
+      - web
