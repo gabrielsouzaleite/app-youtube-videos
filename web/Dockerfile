@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
 COPY ./app /usr/share/nginx/html/app
-COPY ./videos /usr/share/nginx/html/videos
-COPY ./favorites /usr/share/nginx/html/favorites
+COPY ./mf_videos /usr/share/nginx/html/videos
+COPY ./mf_drawer /usr/share/nginx/html/favorites
 
 EXPOSE 80
