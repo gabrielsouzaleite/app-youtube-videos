@@ -12,7 +12,7 @@ export async function searchVideos(query: string): Promise<youtube_v3.Schema$Sea
       part: 'snippet',
       q: query,
       type: 'video',
-      maxResults: 5,
+      maxResults: 12,
     });
     return response.data.items || [];
   } catch (error) {
