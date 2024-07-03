@@ -3,8 +3,7 @@ module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
   moduleFileExtensions: ['js', 'ts'],
-  rootDir: '.',
-  roots: ['<rootDir>/bff', '<rootDir>/web'],
+  rootDir: './bff',
   moduleNameMapper: {
     '\\.(css|less)$': 'identity-obj-proxy',
   },

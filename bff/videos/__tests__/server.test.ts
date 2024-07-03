@@ -4,12 +4,11 @@ import cors from 'cors';
 import { Server } from 'http';
 import { searchVideos } from '../youtubeService';
 
-// Mock do youtubeService
 jest.mock('../youtubeService');
 
 const { searchVideos: mockSearchVideos } = require('../youtubeService');
 
-const createServer = () => {
+const createServer = (): express.Application => {
   const app = express();
   app.use(cors());
 
@@ -20,7 +19,6 @@ const createServer = () => {
       const videos = await mockSearchVideos(query);
       res.json(videos);
     } catch (error) {
-      console.error('Failed to fetch data from YouTube', error);
       res.status(500).json({ error: 'Failed to fetch data from YouTube' });
     }
   });
@@ -34,14 +32,16 @@ describe('Videos API', () => {
 
   beforeAll((done) => {
     app = createServer();
-    server = app.listen(8001, () => {
-      console.log('Test server running at http://localhost:8001/');
+    server = app.listen(8003, () => {
+      console.log('Test server running at http://localhost:8003/');
       done();
     });
   });
 
   afterAll((done) => {
-    server.close(done);
+    if (server) {
+      server.close(done);
+    }
   });
 
   it('should return videos for a valid query', async () => {

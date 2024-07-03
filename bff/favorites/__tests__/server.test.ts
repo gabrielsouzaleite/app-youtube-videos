@@ -5,9 +5,8 @@ import fs from 'fs';
 import path from 'path';
 import { Server } from 'http';
 
-// Configuração similar ao seu servidor
 const app = express();
-const port = 8002;
+const port = 8004;
 
 const favoritesFilePath = path.join(__dirname, '../favorites.json');
 
@@ -16,7 +15,6 @@ app.use(express.json());
 
 let favorites: { id: string }[] = [];
 
-// Carregar favoritos do arquivo JSON ao iniciar
 fs.readFile(favoritesFilePath, 'utf8', (err: NodeJS.ErrnoException | null, data: string) => {
   if (err) {
     console.error('Error reading favorites file:', err);
@@ -57,12 +55,10 @@ app.delete('/api/favorites', (req, res) => {
   res.json({ favorites });
 });
 
-// Inicialização do servidor para testes
 let server: Server;
 
 beforeAll((done) => {
   server = app.listen(port, () => {
-    console.log(`Test server running at http://localhost:${port}/`);
     done();
   });
 });
